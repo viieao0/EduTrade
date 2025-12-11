@@ -1,5 +1,7 @@
 # EduTrade
-https://drive.google.com/file/d/11DoWvQ0a-XVEov9M-oIoCazEmUTjvsvw/view?usp=drive_link
+
+https://drive.google.com/file/d/1qACiPaa3i_-KDdF6Vnz7eteiBJGPjMuE/view?usp=sharing
+
 • App Idea EduTrade is a web platform designed exclusively for university students. It allows students to connect based on their skills and talents, offering academic or project-based help in exchange for a small payment. Access is restricted to verified university emails to ensure a trusted student-only environment.
 
 • Entities
