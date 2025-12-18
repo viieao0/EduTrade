@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/styles.css">
+
+<h2>Login</h2>
+<body class="page-auth">
+
+<form method="POST" action="/auth/login">
+  <label>Email</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>Password</label><br>
+  <input type="password" name="password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<% if (typeof error !== 'undefined') { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
+<p>No account? <a href="/auth/register">Register</a></p>
+
+<footer>
+  <form action="/auth/logout" method="get">
+    <button type="submit" class="logout-btn">Logout</button>
+  </form>
+</footer>

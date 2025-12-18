@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/styles.css">
+<body class="page-new-transactions">
+
+<%- include('../partials/_navbar') %>
+<h2>New Transaction</h2>
+<form action="/transactions" method="POST">
+  <label for="request">Select Request:</label>
+  <select name="request" required>
+    <% requests.forEach(r => { %>
+      <option value="<%= r._id %>"><%= r.title %> (by <%= r.user.name %>)</option>
+    <% }) %>
+  </select><br>
+
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" required><br>
+
+  <button type="submit">Create Transaction</button>
+</form>
+

@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/styles.css">
+
+<%- include('../partials/_navbar') %>
+<h2>New Match</h2>
+<form action="/matches" method="POST">
+  <label for="request">Select Request:</label>
+  <select name="request" required>
+    <% requests.forEach(r => { %>
+      <option value="<%= r._id %>"><%= r.title %> (by <%= r.user.name %>)</option>
+    <% }) %>
+  </select><br>
+
+  <label for="talent">Select Talent:</label>
+  <select name="talent" required>
+    <% talents.forEach(t => { %>
+      <option value="<%= t._id %>"><%= t.title %> (by <%= t.user.name %>)</option>
+    <% }) %>
+  </select><br>
+
+  <button type="submit">Create Match</button>
+</form>
+
+<footer>
+  <form action="/auth/logout" method="get">
+    <button type="submit" class="logout-btn">Logout</button>
+  </form>
+</footer>

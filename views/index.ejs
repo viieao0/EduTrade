@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrade App</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <body class="page-home">
+
+    <div class="app-container">
+        <main class="app-card">
+            <div class="app-header">
+                <div class="logo-circle">🎓</div>
+                <h1>EduTrade</h1>
+                <p>Knowledge Exchange Platform</p>
+            </div>
+
+            <div class="content-body">
+                <% if (!user) { %>
+                    <div class="welcome-msg">
+                        <h2>Welcome!</h2>
+                        <p>Join our community to start trading skills.</p>
+                    </div>
+                    <div class="button-stack">
+                        <a href="/auth/register" class="btn btn-primary">Create Account</a>
+                        <a href="/auth/login" class="btn btn-secondary">Login</a>
+                    </div>
+                <% } else { %>
+                    <div class="welcome-msg">
+                        <h2>Hello, <%= user.username %>!</h2>
+                        <p>Ready to manage your trades today?</p>
+                    </div>
+                    <div class="button-stack">
+                        <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+                        <a href="/auth/logout" class="btn btn-danger">Logout</a>
+                    </div>
+                <% } %>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

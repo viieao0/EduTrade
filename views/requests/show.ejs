@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2><%= request.course %> — Request by <%= request.student?.name %></h2>
+  <p><%= request.details %></p>
+  <p>Status: <%= request.status %></p>
+  <a href="/requests">Back</a>
+</body>
+</html>

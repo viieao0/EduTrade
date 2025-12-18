@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/styles.css">
+
+<%- include('../partials/_navbar') %>
+
+<h2><%= talent.course %></h2>
+<p><strong>Description:</strong> <%= talent.description %></p>
+<p><strong>Year Level:</strong> <%= talent.yearLevel %></p>
+<p><strong>Hourly Rate:</strong> $<%= talent.hourlyRate %></p>
+<p><strong>Published by:</strong> <%= talent.student ? talent.student.name : 'Unknown Student' %></p>
+
+<a href="/talents">Back to All Talents</a>

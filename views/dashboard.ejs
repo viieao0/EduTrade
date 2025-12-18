@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <body class="page-dashboard">
+
+  <header>
+    <h2>Dashboard</h2>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/talents">Talents</a>
+      <a href="/requests">Requests</a>
+      <a href="/matches">Matches</a>
+      <a href="/transactions">Transactions</a>
+      <a href="/auth/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h3>Welcome, <%= user ? user.name : 'Student' %></h3>
+    <p><strong>Email:</strong> <%= user ? user.email : '' %></p>
+
+    <section>
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="/talents/new">Post your talent</a></li>
+        <li><a href="/requests/new">Post a request</a></li>
+        <li><a href="/matches">View matches</a></li>
+        <li><a href="/transactions">View transactions</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

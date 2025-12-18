@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/styles.css">
+
+<h2>All Matches</h2>
+
+<ul>
+  <% matches.forEach(m => { %>
+    <li>
+      <strong>Talent:</strong> <%= m.request.talent.course %> 
+      by <%= m.request.talent.student.name %> <br>
+
+      <strong>Requested by:</strong> <%= m.requester.name %> <br>
+      <strong>Owner:</strong> <%= m.talentOwner.name %> <br>
+      <strong>Status:</strong> <%= m.status %> <br>
+
+      <% if (m.status === 'pending' && m.talentOwner._id.toString() === user._id.toString()) { %>
+        <form method="POST" action="/matches/<%= m._id %>/accept" style="display:inline;">
+          <button type="submit">Accept</button>
+        </form>
+      <% } %>
+
+      <% if (m.status === 'accepted' && (m.talentOwner._id.toString() === user._id.toString() || m.requester._id.toString() === user._id.toString())) { %>
+        <form method="POST" action="/matches/<%= m._id %>/complete" style="display:inline;">
+          <button type="submit">Complete</button>
+        </form>
+      <% } %>
+
+      <% if (m.status === 'completed') { %>
+        <span style="color: green; font-weight:bold;">Completed</span>
+      <% } %>
+    </li>
+    <hr>
+  <% }) %>
+</ul>
+
+<a href="/dashboard" style="display:inline-block; margin:10px 0; padding:5px 10px; background:#3498db; color:white; text-decoration:none; border-radius:4px;">Home</a>
+
+<footer>
+  <form action="/auth/logout" method="get">
+    <button type="submit" class="logout-btn">Logout</button>
+  </form>
+</footer>

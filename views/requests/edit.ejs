@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/styles.css">
+
+<%- include('../partials/_navbar') %>
+<h2>Edit Request</h2>
+<form action="/requests/<%= request._id %>?_method=PUT" method="POST">
+  <input type="text" name="title" value="<%= request.title %>" required><br>
+  <textarea name="description"><%= request.description %></textarea><br>
+  <input type="text" name="category" value="<%= request.category %>"><br>
+  <button type="submit">Update Request</button>
+</form>
+<footer>
+  <form action="/auth/logout" method="get">
+    <button type="submit" class="logout-btn">Logout</button>
+  </form>
+</footer>

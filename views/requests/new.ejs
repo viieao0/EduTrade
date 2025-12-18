@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/styles.css">
+
+<h2>New Request</h2>
+
+<form action="/requests/new" method="POST">
+  <label>Choose Talent:</label>
+  <select name="talentId" required>
+    <% talents.forEach(t => { %>
+      <option value="<%= t._id %>"><%= t.course %> by <%= t.student.name %></option>
+    <% }) %>
+  </select>
+
+  <label>Description:</label>
+  <input type="text" name="description" required>
+
+  <button type="submit">Send Request</button>
+</form>
+<footer>
+  <form action="/auth/logout" method="get">
+    <button type="submit" class="logout-btn">Logout</button>
+  </form>
+</footer>

@@ -1,0 +1,649 @@
+/* EduTrade - Ultra Pro Mobile Experience 
+   Focus: Wide Navigation, Centered Glass-Container, Internal Pages Styling
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-color: #f3ebff;
+    --primary-purple: #6200ee;
+    --dark-purple: #3700b3;
+    --glass-bg: rgba(255, 255, 255, 0.94);
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --radius: 30px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f1ff 0%, #e9daff 100%);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- 1. الـ Navbar (تم توسيعه ليكون مريحاً جداً) --- */
+nav, .navbar, ._navbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    width: fit-content; /* يتوسع حسب الكلام */
+    min-width: 400px;
+    max-width: 95%;
+    margin: 40px auto 20px auto;
+    padding: 12px 35px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-purple);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+    border-radius: 40px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap; /* يمنع نزول الكلام لسطر ثاني */
+}
+
+nav a:hover, nav a.active {
+    background: var(--primary-purple);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(98, 0, 238, 0.3);
+}
+
+/* --- 2. المربع المركزي (تصميم الصفحات من الداخل) --- */
+main, .main-container, .container, .auth-box {
+    background: var(--glass-bg);
+    width: 92%;
+    max-width: 550px; /* عرض كأنه تطبيق موبايل */
+    margin-bottom: 50px;
+    padding: 45px 35px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+/* --- 3. تصميم البطاقات الداخلية (Transactions / Requests) --- */
+ul, .list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+/* تحويل كل "نص" داخل القائمة لبطاقة فخمة */
+li, .item-card {
+    background: #ffffff;
+    padding: 22px;
+    margin-bottom: 18px;
+    border-radius: 20px;
+    text-align: left; /* للبيانات الإنجليزية */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    border-left: 6px solid var(--primary-purple);
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+li b {
+    display: block;
+    color: var(--primary-purple);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* --- 4. تصميم النماذج (Login / New Talent / New Request) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    background: #fcfcfd;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-purple);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(98, 0, 238, 0.1);
+}
+
+/* --- 5. الأزرار (Buttons) --- */
+button, .btn-action {
+    background: var(--primary-purple);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(98, 0, 238, 0.2);
+}
+
+button:hover {
+    background: var(--dark-purple);
+    transform: translateY(-2px);
+}
+
+/* روابط الداشبورد السريعة */
+.quick-links a {
+    display: block;
+    background: white;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: var(--primary-purple);
+    font-weight: 700;
+    border: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.quick-links a:hover {
+    background: var(--primary-purple);
+    color: white;
+}
+
+/* --- 6. العناوين --- */
+h1 {
+    font-weight: 800;
+    color: var(--dark-purple);
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+/* --- Animations --- */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive للجوال */
+@media (max-width: 500px) {
+    nav { min-width: 90%; padding: 10px; }
+    nav a { padding: 10px 12px; font-size: 0.8rem; }
+    main { padding: 30px 20px; }
+}
+
+
+
+
+/* ===== Page Background Variations ===== */
+
+.page-home {
+    background: linear-gradient(135deg, #fce4ff, #e0f2ff);
+}
+
+.page-dashboard {
+    background: linear-gradient(135deg, #f5f1ff, #e9daff);
+}
+
+.page-talents {
+    background: linear-gradient(135deg, #e0f7fa, #f3ebff);
+}
+
+.page-new-talent {
+    background: linear-gradient(135deg, #fff1f8, #f3ebff);
+}
+
+.page-requests {
+    background: linear-gradient(135deg, #fff8e1, #fce4ec);
+}
+
+.page-matches {
+    background: linear-gradient(135deg, #ede7f6, #e1f5fe);
+}
+
+.page-transactions {
+    background: linear-gradient(135deg, #e8f5e9, #e0f7fa);
+}
+
+.page-auth {
+    background: linear-gradient(135deg, #f3ebff, #fce4ff);
+}
+
+
+.page-home main {
+    text-align: center;
+}
+
+.page-home h1 {
+    font-size: 2.2rem;
+}
+
+.page-home .hero {
+    margin-top: 20px;
+}
+
+.page-home .hero p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.page-home .hero a {
+    display: inline-block;
+    margin: 8px;
+    padding: 14px 26px;
+    border-radius: 30px;
+    background: var(--primary-purple);
+    color: wh
+    
+    
+    ite;
+    font-weight: 700;
+}
+
+
+
+
+
+.page-talents ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.page-talents li {
+    border-left: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ffffff, #f7f3ff);
+}
+
+.page-talents li:hover {
+    transform: translateY(-6px);
+}
+
+
+
+
+
+.page-new-talent form,
+.page-requests form {
+    margin-top: 10px;
+}
+
+.page-new-talent h1,
+.page-requests h1 {
+    text-align: center;
+}
+
+
+
+
+
+
+.page-transactions li {
+    background: linear-gradient(135deg, #e8f5e9, #ffffff);
+    border-left: 6px solid #2ecc71;
+}
+
+.page-transactions li b {
+    color: #2ecc71;
+}
+
+
+/* ======================================================
+   EduTrade – University Talents App UI
+   Mobile / Pinterest / Soft Academic Vibe
+====================================================== */
+
+/* -------- Fonts -------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* -------- Root Colors -------- */
+:root {
+  --purple: #6a5acd;
+  --purple-dark: #4b3fa7;
+  --pink: #f48fb1;
+  --blue: #64b5f6;
+  --mint: #4db6ac;
+  --bg-main: linear-gradient(135deg, #f3e5f5, #e3f2fd);
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --shadow-soft: 0 15px 40px rgba(0, 0, 0, 0.08);
+  --radius-xl: 28px;
+  --radius-md: 16px;
+}
+
+/* -------- Reset -------- */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 15px;
+  color: #333;
+}
+
+/* -------- Page Wrapper -------- */
+.page,
+.container,
+main {
+  width: 100%;
+  max-width: 420px;      /* شكل تطبيق */
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  padding: 30px 25px 40px;
+  animation: fadeUp 0.6s ease;
+}
+
+/* -------- Top Title -------- */
+h1, h2 {
+  text-align: center;
+  font-weight: 800;
+  color: var(--purple-dark);
+  margin-bottom: 25px;
+}
+
+/* -------- Home / Dashboard Buttons -------- */
+.dashboard-links a,
+.quick-links a {
+  display: block;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white;
+  text-align: center;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+
+.dashboard-links a:hover,
+.quick-links a:hover {
+  transform: translateY(-4px);
+  opacity: 0.95;
+}
+
+/* -------- Lists (Talents / Requests / Matches / Transactions) -------- */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  border-left: 6px solid var(--purple);
+  animation: fadeUp 0.4s ease;
+}
+
+li strong {
+  color: var(--purple-dark);
+}
+
+/* -------- Forms -------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input,
+textarea,
+select {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: 0.25s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(106,90,205,0.15);
+}
+
+/* -------- Buttons -------- */
+button {
+  padding: 15px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, var(--blue), var(--mint));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* -------- Status Tags -------- */
+.completed {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.pending {
+  color: #ef6c00;
+  font-weight: 700;
+}
+
+/* -------- Auth Pages -------- */
+.auth-box {
+  text-align: center;
+}
+
+.auth-box p {
+  margin-top: 10px;
+}
+
+/* -------- Home / Back Links -------- */
+.home-link,
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* -------- Logout -------- */
+.logout {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.logout a {
+  color: #e53935;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* -------- Animations -------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Mobile Friendly -------- */
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+}
+
+/* ================= TALENTS PAGE ================= */
+
+.talents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.talent-card {
+  background: linear-gradient(135deg, #ede7f6, #e3f2fd);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.talent-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.talent-card h3 {
+  font-size: 1.1rem;
+  color: #4a148c;
+  margin-bottom: 6px;
+}
+
+.talent-card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.talent-card .tag {
+  margin-top: 10px;
+  background: #7e57c2;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.7rem;
+  align-self: flex-start;
+}
+
+
+/* ================= TRANSACTIONS ================= */
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.transaction-card {
+  background: white;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #311b92;
+}
+
+.transaction-info span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.transaction-amount {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.transaction-amount.positive {
+  color: #2e7d32;
+}
+
+.transaction-amount.negative {
+  color: #c62828;
+}
+
+
+
+
+/* ================= REQUESTS ================= */
+
+.request-card {
+  background: linear-gradient(135deg, #fffde7, #e0f2f1);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+}
+
+.request-card h3 {
+  color: #1b5e20;
+  margin-bottom: 6px;
+}
+
+.request-card p {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.request-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.request-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+}
+
+.request-actions .accept {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+.request-actions .reject {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+}

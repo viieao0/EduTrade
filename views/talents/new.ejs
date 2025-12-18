@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/styles.css">
+<body class="page-new-talent">
+
+<h2>New Talent</h2>
+
+<form action="/talents/new" method="POST">
+  <label>Course:</label>
+  <input type="text" name="course" required><br>
+
+  <label>Description:</label>
+  <textarea name="description" required></textarea><br>
+
+  <label>Hourly Rate:</label>
+  <input type="number" name="hourlyRate" required><br>
+
+  <button type="submit">Add Talent</button>
+</form>
+
+<p><a href="/talents">Back to Talents</a></p>
