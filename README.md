@@ -1,67 +1,162 @@
-# EduTrade
+🎓 EduTrade – University Talent Exchange Platform
 
-https://drive.google.com/file/d/1qACiPaa3i_-KDdF6Vnz7eteiBJGPjMuE/view?usp=sharing
+📌 Project Overview
+EduTrade is a full-stack CRUD web application designed for university students to exchange skills and talents.
+Students can offer their talents, request help from others, match with peers, and complete transactions in a structured and user-friendly way.
+The app focuses on collaboration, learning, and peer-to-peer support within a university environment.
 
-• App Idea EduTrade is a web platform designed exclusively for university students. It allows students to connect based on their skills and talents, offering academic or project-based help in exchange for a small payment. Access is restricted to verified university emails to ensure a trusted student-only environment.
+🎯 Problem Statement
+Many university students have valuable skills (coding, tutoring, design, etc.) but lack a simple platform to exchange these talents fairly and securely.
+EduTrade solves this by providing a centralized system where students can connect, request help, and track agreements transparently.
 
-• Entities
+💡 Solution
+EduTrade allows students to:
 
-User: name, email, password, major, academic year
+Register using a university email
 
-Talent: title, description, linked to a user
+Create and manage talents
 
-Request: title, description, required talent, price, linked to a user
+Send and receive requests
 
-Match: connects a request to a suitable talent
+Automatically generate matches
 
-Transaction: records the agreement between users, including price and status
+Complete matches and generate transactions
 
-• Relationship
+Track activity through a dashboard
 
-One user can have multiple talents
+🧩 Features (MVP)
+User authentication (register, login, logout)
 
-One user can post multiple requests
+University email validation
 
-A request can be matched with one or more talents
+CRUD operations for:
 
-A match links a request to a talent
+Talents
 
-A transaction connects the requester and the talent owner
+Requests
 
-• How u will render
+Matches
 
-Login page: verifies university email
+Transactions
 
-Dashboard: shows latest talents and requests
+Role-based views (requester vs talent owner)
 
-Talents page: displays student skills with filters
+Match status flow: Pending → Accepted → Completed
 
-Requests page: lists help requests with payment offers
+Automatic transaction creation after match completion
 
-Match page: shows suitable student for each request
+Styled UI with a modern, app-like design
 
-Transactions page: shows accepted requests and payment status
+🛠️ Technologies Used
+Frontend
 
-• Mockup
+EJS (Embedded JavaScript Templates)
 
-Home: buttons for "Add Talent" and "Add Request"
+CSS (Custom responsive styling)
 
-Talents Page: Eman – 3rd Year – Skill: Node.js hamza – 2nd Year – Skill: Graphic Design
+Backend
 
-Requests Page: Graduation project needs MongoDB support – Offered: $50 Need private tutoring in Math – Offered: $30
+Node.js
 
-Match Page: Eman needs a backend developer – nasser has Node.js experience – Contact Now
+Express.js
 
-Transactions Page: Request: MongoDB help – Talent Owner: nasser – Price: $50 – Status: Pending
+MongoDB
 
+Mongoose
 
+Authentication & Utilities
 
+express-session
 
+bcrypt
 
+dotenv
 
+🗂️ Project Structure
+edutrade/
+│
+├── controllers/
+│   ├── auth.js
+│   ├── talents.js
+│   ├── requests.js
+│   ├── matches.js
+│   └── transactions.js
+│
+├── models/
+│   ├── user.js
+│   ├── talent.js
+│   ├── request.js
+│   ├── match.js
+│   └── transaction.js
+│
+├── views/
+│   ├── auth/
+│   ├── talents/
+│   ├── requests/
+│   ├── matches/
+│   ├── transactions/
+│   └── dashboard.ejs
+│
+├── public/
+│   └── styles.css
+│
+├── middleware/
+│   └── is-signed-in.js
+│
+├── server.js
+├── .env
+├── package.json
+└── README.md
+🔄 User Flow
+User registers with a university email
 
+User logs in and accesses the dashboard
 
+User creates a talent OR browses talents
 
-Match Page: Eman needs a backend developer – Salman has Node.js experience – Contact Now
+Another user sends a request
 
-Transactions Page: Request: MongoDB help – Talent Owner: Salman – Price: $50 – Status: Pending
+A match is created automatically
+
+Talent owner accepts the match
+
+Match is completed
+
+Transaction is generated for both users
+
+⚙️ Getting Started
+Deployed App: [Add your deployed link here]
+Planning Materials: [Add your planning docs link here]
+
+Clone the repository and install dependencies:
+
+bash
+git clone https://github.com/your-username/edutrade.git
+cd edutrade
+npm install
+Create a .env file with:
+
+MONGO_URI=your_mongodb_connection_string
+SESSION_SECRET=your_secret_key
+Run the server:
+
+bash
+npm start
+🚀 Usage
+Visit http://localhost:3000 in your browser
+
+Register with a university email
+
+Explore talents, send requests, and manage matches
+
+📎 Attributions
+No external assets requiring attribution were used.
+https://drive.google.com/file/d/1_5h1onsX2KZ7rkFxddlRyaqn3PgoNEPx/view?usp=sharing
+🔮 Next Steps
+Add rating and feedback system for completed matches
+
+Implement notifications for new requests and matches
+
+Enhance UI with a modern frontend framework (React or Vue)
+
+Add admin dashboard for monitoring activity
