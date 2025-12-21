@@ -1,0 +1,14 @@
+<%- include('../partials/_navbar') %>
+<h2>My Talents</h2>
+<ul>
+  <% talents.forEach(t => { %>
+    <li>
+      <strong><%= t.title %></strong> - <%= t.description %>
+      <a href="/talents/<%= t._id %>/edit">Edit</a>
+      <form action="/talents/<%= t._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<a href="/talents/new">Add Talent</a>

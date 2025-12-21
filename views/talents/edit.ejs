@@ -1,0 +1,8 @@
+<%- include('../partials/_navbar') %>
+<h2>Edit Talent</h2>
+<form action="/talents/<%= talent._id %>?_method=PUT" method="POST">
+  <input type="text" name="title" value="<%= talent.title %>" required><br>
+  <textarea name="description"><%= talent.description %></textarea><br>
+  <input type="text" name="category" value="<%= talent.category %>"><br>
+  <button type="submit">Update Talent</button>
+</form>

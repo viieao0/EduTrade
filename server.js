@@ -26,7 +26,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.static('public'));
-
+// يخبر السيرفر بأن مجلد public يحتوي على الملفات الثابتة مثل CSS
+app.use(express.static('public'));
 // Sessions
 app.use(session({
   secret: process.env.SESSION_SECRET || 'devsecret',

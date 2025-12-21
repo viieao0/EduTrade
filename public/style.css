@@ -647,3 +647,245 @@ button:hover {
 .request-actions .reject {
   background: linear-gradient(135deg, #ef5350, #e53935);
 }
+
+
+
+
+
+/* ================== Center Layout Fix ================== */
+body {
+    background: linear-gradient(135deg, #f5f1ff 0%, #e9daff 100%);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   /* ⬅️ يوسّط عموديًا */
+
+    min-height: 100vh;
+}
+
+/* ================== Main Box (الكرت الرئيسي) ================== */
+main,
+.container,
+.main-container,
+.auth-box {
+    background: rgba(255, 255, 255, 0.96);
+    width: 92%;
+    max-width: 700px;          /* ⬅️ كبرنا العرض */
+    min-height: 60vh;          /* ⬅️ ارتفاع مريح */
+
+    margin: 0 auto 60px auto;
+    padding: 50px 45px;
+
+    border-radius: 35px;
+    box-shadow: 
+        0 20px 40px rgba(98, 0, 238, 0.15),
+        0 5px 15px rgba(0,0,0,0.05);
+
+    text-align: center;
+    animation: slideUp 0.6s ease-out;
+}
+
+/* ================== Titles ================== */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #3700b3;
+    margin-bottom: 35px;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 600px) {
+    main,
+    .container {
+        padding: 35px 25px;
+        min-height: auto;
+    }
+}
+
+
+/* ================== Login Page ================== */
+body.login-page {
+    justify-content: center;
+}
+
+/* صندوق تسجيل الدخول */
+.login-box {
+    background: rgba(255, 255, 255, 0.97);
+    width: 92%;
+    max-width: 420px;
+    padding: 55px 40px;
+
+    border-radius: 38px;
+    box-shadow:
+        0 25px 60px rgba(98, 0, 238, 0.25),
+        0 10px 20px rgba(0,0,0,0.08);
+
+    text-align: center;
+    animation: slideUp 0.6s ease-out;
+}
+
+/* عنوان */
+.login-box h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #3700b3;
+    margin-bottom: 10px;
+}
+
+.login-box p.subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+    border: 1px solid #e0e0e0;
+    background: #faf9ff;
+
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.login-box input:focus {
+    border-color: #6200ee;
+    box-shadow: 0 0 0 4px rgba(98,0,238,0.15);
+    background: white;
+}
+
+/* زر الدخول */
+.login-box button {
+    width: 100%;
+    margin-top: 10px;
+
+    padding: 18px;
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #6200ee, #9c27b0);
+    color: white;
+
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1rem;
+
+    box-shadow: 0 10px 25px rgba(98,0,238,0.35);
+}
+
+.login-box button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* رابط أسفل */
+.login-box .bottom-link {
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.login-box .bottom-link a {
+    color: #6200ee;
+    font-weight: 700;
+}
+
+
+/* إعدادات الخطوط والألوان العامة */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    direction: rtl; /* لدعم اللغة العربية */
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 30px;
+}
+
+/* تنسيق كرت المباراة */
+.match-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الفرق */
+.team {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+/* تنسيق النتيجة في المنتصف */
+.result-box {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    background: #2d3748;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.time {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* حالة المباراة (مباشر أو انتهت) */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.live {
+    background-color: #fed7d7;
+    color: #c53030;
+    border: 1px solid #c53030;
+}
+
+.finished {
+    background-color: #edf2f7;
+    color: #4a5568;
+}
